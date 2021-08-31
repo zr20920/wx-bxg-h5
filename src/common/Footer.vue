@@ -1,6 +1,6 @@
 <template>
-  <div class="footer">
-    <p>wechat-miniprogram</p>
+  <div class="footer txt-center txt-minor txt-14">
+    <p>网页产品仅供参考，详情请咨询商家。</p>
   </div>
 </template>
 
@@ -10,10 +10,4 @@ export default {
 }
 </script>
 
-<style lang="less">
-.footer {
-  margin-top: 10px;
-  width: 100%;
-  text-align: center;
-}
-</style>
+<style lang="less"></style>

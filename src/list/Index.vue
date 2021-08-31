@@ -1,5 +1,5 @@
 <template>
-  <div class="cnt">
+  <div class="list">
     <Header></Header>
     <a href="/home">回到首页</a>
     <button @click="onClickJump">回到首页</button>

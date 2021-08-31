@@ -1,5 +1,5 @@
 <template>
-  <div class="cnt">
+  <div class="detail">
     <Header></Header>
     <button @click="onClickBack">回到上一页</button>
     <Footer></Footer>

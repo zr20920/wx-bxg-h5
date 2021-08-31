@@ -1,10 +1,20 @@
 <template>
-  <div class="cnt">
-    <Header></Header>
-    <div>
-      <button @click="onClickJump">当前页跳转</button>
-      <button @click="onClickOpen">新开页面跳转</button>
-    </div>
+  <div class="home flex-ver">
+    <Header title="首页" leftName=""></Header>
+    <wx-swiper
+      :indicator-dots="true"
+      :circular="true"
+      :autoplay="true"
+      class="banner"
+    >
+      <wx-swiper-item v-for="(item, index) in background" :key="index" >
+        <img class="img" :src="require('@/assets/img/img_bs1.png')" alt="">
+      </wx-swiper-item>
+    </wx-swiper>
+    <!-- 九宫格 -->
+    <Grid/>
+    <!-- 热门产品 -->
+    <hot-list/>
     <!-- 样式隐藏 -->
     <Footer></Footer>
   </div>
@@ -14,12 +24,21 @@
 import Vue from 'vue'
 import Header from '../common/Header.vue'
 import Footer from '../common/Footer.vue'
+import Grid from './common/grid.vue'
+import HotList from './common/hot-list.vue'
 
 export default Vue.extend({
   name: 'Home',
   components: {
     Header,
     Footer,
+    Grid,
+    HotList,
+  },
+  data() {
+    return {
+      background: [1, 2, 3]
+    }
   },
   created() {
     window.addEventListener('wxload', query => console.log('page1 wxload', query))
@@ -47,8 +66,16 @@ export default Vue.extend({
 </script>
 
 <style lang="less">
-.cnt {
-  margin-top: 20px;
+.home {
+  height: 100%;
+  .banner {
+    width: 100%;
+    height: 150px;
+    .img {
+      width: 100%;
+      height: 150px;
+    }
+  }
 }
 
 a, button {
